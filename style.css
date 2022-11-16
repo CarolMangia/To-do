@@ -140,4 +140,19 @@ ul {
  }
  .login h2,p{
      color: #111111;
+     margin-top: 10px;
+ }
+ #cadastro {
+     margin-top: 10px;
+     align-content: center; 
+ }
+ #entra {
+    margin-top: 5px;
+    margin-left: 2px;
+    align-content: center;
+}
+
+ .login{
+     text-align: center;
+     margin-top: 125px;
  }

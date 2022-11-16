@@ -30,4 +30,15 @@ document.querySelector('#pressione').onclick = function(){
 
         document.querySelector("#novatarefa input").value = "";
     }
+    function Cadastrar(){
+      
+        document.getElementById('tudo').style.display="block";
+  
+      }
+        function Exibir(){
+        
+          document.getElementById('tudo').style.display="none";
+          
+  
+        }
 }
