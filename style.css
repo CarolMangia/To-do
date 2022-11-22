@@ -131,11 +131,11 @@ ul {
  .login{
      background-color: white;
      align-items: center;
-     margin-left: 40%;
+     margin-left: 18%;
      margin-right: 40%;
      margin-top: 35vh;
-    padding: 10px;
-    border-radius: 5px;
+     padding: 10px;
+     border-radius: 5px;
    
  }
  .login h2,p{
