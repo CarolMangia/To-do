@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>A&A´s To-Do List</title>
+    <title>To Do List</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
@@ -42,28 +42,70 @@
 
 <div id="container"> 
 
-<div id="d1"> <p>Nome:</p><input type="text" id="nome">
+    <div id="d1">
+        <p>Nome:</p> <input type="text" id="nome">
+       
+        <p>Login:</p> 
+        <input type="text" id="login">
+      </div>
+      <div id="d2">
+        <p>Email:</p> <input type="text" id="email">
 
-<p>Username:</p><input type="text" id="usuario">
-
-<div id="d2"> </div><p>Email:</p><input type="text" id="email">
-
-<p>Senha:</p><input type="text" id="senha">
-
-<div id="d3"> <p>Confirme senha:</p><input type="text" id="confirmarsenha">
+        <p>Senha:</p> <input type="password" id="senha"> 
+      </div>
+      <div id="d3">
+        <p>Confirme sua senha:</p> <input type="password" id="confirmarsenha">
+      </div> <br>
 
 <div id="ad"> </div>
 
 <div class="button">
     <button onclick="envia();" id="entra"><span>Entrar </span></button>    
 
-    <button id="cadastro" onclick="cadastrar()"> <span>Cadastrar</span></button>
-    <button id="exibe" onclick="exibir()"><span>Exibir</span></button>
-    <button id="botaous" onclick="user();"><span>Usuário</span></button>
+    
 
 </div>
 </div>
+<script>
 
+function envia(){
+            var ad = document.getElementById("ad");
+            var login = document.getElementById("login").value;
+            var nome = document.getElementById("nome").value;
+            var senha = document.getElementById("senha").value;
+            var verify = document.getElementById("confirmarsenha").value;
+            var email = document.getElementById("email").value;
+            var testa =0;
+            console.log("foi");
+            if (email.includes('@')){
+              var testa = 1;
+            }else{
+              testa=2
+            }
+      
+             if (login.length < 10){  
+               
+               ad.innerHTML+="Não foi possível fazer seu login, verifique se seu login tem menos de 10 letras"+"<br>";    
+             }
+             if(nome.length > 10){
+              
+               ad.innerHTML+="Não foi possível fazer seu login, verifique se seu nome tem mais de 10 letras"+"<br>";        
+             }
+             if  (senha!==verify ){
+              ad.innerHTML+="Senhas não coincidem"+"<br>";
+             }
+             if (testa==2) {
+              ad.innerHTML+="Não foi possível fazer seu login, verifique se seu email está correto";
+             }
+            if((login.length >= 10) && (nome.length <= 10) && (senha ==verify) && (testa!==2)) {
+              document.getElementsByClassName("content")[0].style.display="block";
+              document.getElementsByTagName("ul")[0].style.display="block";
+              document.getElementsByClassName("login")[0].style.display="none";
+      
+            }
+             
+          }
+</script>
 
 <div id="user">
 <p id="1nome"> </p>

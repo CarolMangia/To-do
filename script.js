@@ -42,21 +42,43 @@ document.querySelector('#pressione').onclick = function(){
   
         }
 
-        function adicionar()
-        {
-            
-          var conteudo= document.getElementById('texto').value; 
-          if(conteudo!="") { var cont=1;
-          var novoElemento= document.createTextNode(conteudo);
-          var Novadiv= document.createElement('div');
-          Novadiv.style.position='relative';
-          Novadiv.style.backgroundColor='black';
-          Novadiv.style.borderRadius='5px';
-          Novadiv.style.color='white';
-          Novadiv.style.border='solid 2px';
-          Novadiv.style.borderColor='purple'; 
-        }
-     }
+        function envia(){
+            var ad = document.getElementById("ad");
+            var login = document.getElementById("login").value;
+            var nome = document.getElementById("name").value;
+            var senha = document.getElementById("senha").value;
+            var verify = document.getElementById("confirmarsenha").value;
+            var email = document.getElementById("email").value;
+            var testa =0;
+            console.log("foi");
+            if (email.includes('@')){
+              var testa = 1;
+            }else{
+              testa=2
+            }
+      
+             if (login.length < 10){  
+               
+               ad.innerHTML+="login tem menos de 10 letras!!"+"<br>";    
+             }
+             if(nome.length > 10){
+              
+               ad.innerHTML+="Nome tem mais de 10 letras!!"+"<br>";        
+             }
+             if  (senha!==verify ){
+              ad.innerHTML+="Senhas não coincidem!"+"<br>";
+             }
+             if (testa==2) {
+              ad.innerHTML+="Email não tem @!!";
+             }
+            if((login.length >= 10) && (nome.length <= 10) && (senha ==verify) && (testa!==2)) {
+              document.getElementById("to-do").style.display="block";
+              document.getElementById("register").style.display="none";
+      
+            }
+             
+          }
+          
   
 
 
